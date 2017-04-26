@@ -1,0 +1,26 @@
+<div class="app">
+<div class="pingAll">
+  <button type="button" class="btn btn-default"  @click="pingAll(people)">Пнуть всех</button>
+</div>
+
+<div class="pingAll">
+  <table>
+    <tr>
+      <td v-for="person in people">
+        {{ person.name }}
+        <br>
+        <label><input type='radio' v-model="person.status" :value="0"> Меня нет</label>
+        <br>
+        <label><input type='radio' v-model="person.status" :value="1"> Не готов</label>
+        <br>
+        <label><input type='radio' v-model="person.status" :value="2"> Go</label>
+        <br>
+        <button type="button" class="btn btn-default" @click="ping(person)">пинг</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<pre>{{ $data }}</pre>
+
+</div>
