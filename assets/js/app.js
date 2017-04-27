@@ -26,11 +26,15 @@ var vm = new Vue({
       });
     io.socket.on("chage-status", function(data) {
       if (!_.isEqual(data, vm.people)) {
+        toastr.info('Статус поменялся!');
         vm.people = data;
       }
     });
     io.socket.on("pingAll", function() {
-      toastr.info('Сними трубку!');
+      toastr.error('Сними трубку!');
+    });
+    io.socket.on("gogo", function() {
+      toastr.warning('Выходим!');
     });
   },
 
